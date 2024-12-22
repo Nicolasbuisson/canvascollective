@@ -1,17 +1,15 @@
-import Image from "next/image";
 import styles from "./page.module.css";
+import { ImageBasePath } from "./../components/image";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
+        <ImageBasePath
+          src={"/next.svg"}
           width={180}
           height={38}
-          priority
+          alt="Next.js logo"
         />
         <ol>
           <li>
@@ -27,12 +25,12 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
+            <ImageBasePath
+              src={"/vercel.svg"}
               className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
               width={20}
               height={20}
+              alt="Vercel logomark"
             />
             Deploy now
           </a>
@@ -52,12 +50,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
+          <ImageBasePath
             aria-hidden
-            src="/file.svg"
-            alt="File icon"
+            src={"/file.svg"}
             width={16}
             height={16}
+            alt="File icon"
           />
           Learn
         </a>
@@ -66,12 +64,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
+          <ImageBasePath
             aria-hidden
-            src="/window.svg"
-            alt="Window icon"
+            src={"/window.svg"}
             width={16}
             height={16}
+            alt="window icon"
           />
           Examples
         </a>
@@ -80,12 +78,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
+          <ImageBasePath
             aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
+            src={"/globe.svg"}
             width={16}
             height={16}
+            alt="Globe icon"
           />
           Go to nextjs.org →
         </a>
