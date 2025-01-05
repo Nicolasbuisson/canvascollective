@@ -30,13 +30,48 @@ export const Navigation = () => {
   return (
     <header className="navigation-container sticky-navigation-container">
       <nav>
-        <ImageBasePath
-          src={"/next.svg"}
-          width={180}
-          height={38}
-          alt="Next.js logo"
-          className="nav-logo"
-        />
+        <div className="desktop-menu">
+          <ImageBasePath
+            src={"/logo.png"}
+            width={120}
+            height={28}
+            alt="Next.js logo"
+          />
+          <ul className="link-list">
+            <li>
+              <a
+                href={nextConfig.basePath}
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href={nextConfig.basePath + "/services"}
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                Services
+              </a>
+            </li>
+            <li>
+              <a
+                href={nextConfig.basePath + "/about"}
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href={nextConfig.basePath + "/contact"}
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
         <div className="burger-menu" onClick={updateMenu}>
           <div className={burger_class}></div>
           <div className={burger_class}></div>
