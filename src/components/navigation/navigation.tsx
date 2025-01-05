@@ -1,8 +1,14 @@
 "use client";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import "./navigation.css";
 import { ImageBasePath } from "../image";
-import nextConfig from "../../../next.config";
+import Link from "next/link";
+
+interface IPage {
+  name: string;
+  path: string;
+}
 
 export const Navigation = () => {
   // to change burger classes
@@ -27,6 +33,22 @@ export const Navigation = () => {
     setIsMenuClicked(!isMenuClicked);
   };
 
+  const pages: IPage[] = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
+  ];
+
+  const currentPath = usePathname();
+
+  const resetPage = () => {
+    updateMenu();
+    window.scrollTo(0, 0);
+  };
+
+  console.log(isMenuClicked);
+
   return (
     <header className="navigation-container sticky-navigation-container">
       <nav>
@@ -38,38 +60,19 @@ export const Navigation = () => {
             alt="Next.js logo"
           />
           <ul className="link-list">
-            <li>
-              <a
-                href={nextConfig.basePath}
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href={nextConfig.basePath + "/services"}
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href={nextConfig.basePath + "/about"}
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href={nextConfig.basePath + "/contact"}
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                Contact
-              </a>
-            </li>
+            {pages.map((page) => {
+              return (
+                <li key={page.name}>
+                  <Link
+                    className={currentPath === page.path ? "link-active" : ""}
+                    href={page.path}
+                    onClick={() => resetPage()}
+                  >
+                    {page.name}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
         <div className="burger-menu" onClick={updateMenu}>
@@ -80,42 +83,19 @@ export const Navigation = () => {
       </nav>
       <div id="menu-container">
         <ul className="menu" id="menu">
-          <li>
-            <a
-              href={nextConfig.basePath}
-              className="link"
-              onClick={() => window.scrollTo(0, 0)}
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href={nextConfig.basePath + "/services"}
-              className="link"
-              onClick={() => window.scrollTo(0, 0)}
-            >
-              Services
-            </a>
-          </li>
-          <li>
-            <a
-              href={nextConfig.basePath + "/about"}
-              className="link"
-              onClick={() => window.scrollTo(0, 0)}
-            >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              href={nextConfig.basePath + "/contact"}
-              className="link"
-              onClick={() => window.scrollTo(0, 0)}
-            >
-              Contact
-            </a>
-          </li>
+          {pages.map((page) => {
+            return (
+              <li key={page.name}>
+                <Link
+                  href={page.path}
+                  className="link"
+                  onClick={() => resetPage()}
+                >
+                  {page.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </header>

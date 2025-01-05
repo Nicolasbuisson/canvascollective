@@ -48,12 +48,16 @@ nav {
     font-size: var(--fs-h3);
     font-weight: var(--fw-bold);
     font-family: var(--ff-primary);
-    filter: brightness(.6);
+    filter: brightness(.7);
     transition: all .3s ease-in-out
 }
 
 .link-list a:hover {
     transform: scale(1.1);
+    filter: brightness(1);
+}
+
+.link-list .link-active {
     filter: brightness(1);
 }
 
