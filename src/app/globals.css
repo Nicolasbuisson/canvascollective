@@ -16,7 +16,8 @@
   --fs-h4: 1.25rem;
   --fs-body: 1.0rem;
 
-  --scroll: 0;
+  --section-padding-block: 4rem;
+  --section-padding-inline: 1.5rem;
 }
 
 @media (width > 880px) {
@@ -58,6 +59,10 @@ h3 {
 }
 h4 {
   font-size: var(--fs-h4);
+}
+section {
+  padding-block: var(--section-padding-block);
+  padding-inline: var(--section-padding-inline);
 }
 body {
   font-size: var(--fs-body);
