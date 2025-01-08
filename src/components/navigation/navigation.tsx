@@ -4,6 +4,8 @@ import { usePathname } from "next/navigation";
 import "./navigation.css";
 import { ImageBasePath } from "../image";
 import Link from "next/link";
+import { useWindowSize } from "@/hooks/useWindowSize";
+import { MOBILE_BREAKPOINT } from "@/constants/breakpoints";
 
 interface IPage {
   name: string;
@@ -41,13 +43,12 @@ export const Navigation = () => {
   ];
 
   const currentPath = usePathname();
+  const windowWidth = useWindowSize();
 
   const resetPage = () => {
-    updateMenu();
+    if (windowWidth < MOBILE_BREAKPOINT) updateMenu();
     window.scrollTo(0, 0);
   };
-
-  console.log(isMenuClicked);
 
   return (
     <header className="navigation-container sticky-navigation-container">
