@@ -1,10 +1,13 @@
+import { Schedule } from "@/components/schedule/schedule";
 import styles from "./page.module.css";
 import { Location } from "@/components/location/location";
+import { Hero } from "@/components/hero/hero";
 
 export default function Home() {
   return (
     <div>
-      <h1 className={styles.title}>Home</h1>;
+      <Hero />
+      <Schedule />
       <Location />
     </div>
   );
