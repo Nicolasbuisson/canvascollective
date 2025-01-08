@@ -1,0 +1,46 @@
+.schedule-section {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 0rem;
+}
+
+.schedule-section hr {
+    background-color: var(--clr-light);
+    width: 100%;
+    height: 4px;
+    border-radius: 50px;
+}
+
+.schedule-section h2 {
+    text-transform: uppercase;
+}
+
+.schedule-entry {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+}
+
+.schedule-entry p:first-child {
+    justify-self: end;
+    font-weight: var(--fw-bold);
+}
+
+.schedule-entry p {
+    font-size: var(--fs-h3);
+    text-wrap: pretty;
+}
+
+@media (width < 440px) {
+    .schedule-entry {
+        grid-template-columns: auto;
+        justify-content: center;
+        gap: 0rem;
+        margin-block: 1rem;
+    }
+}
