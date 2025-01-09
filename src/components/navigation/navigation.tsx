@@ -54,12 +54,14 @@ export const Navigation = () => {
     <header className="navigation-container sticky-navigation-container">
       <nav>
         <div className="desktop-menu">
-          <ImageBasePath
-            src={"/logo.png"}
-            width={120}
-            height={28}
-            alt="Next.js logo"
-          />
+          <Link href={"/"}>
+            <ImageBasePath
+              src={"/logo.png"}
+              width={120}
+              height={28}
+              alt="Next.js logo"
+            />
+          </Link>
           <ul className="link-list">
             {pages.map((page) => {
               return (
