@@ -1,0 +1,25 @@
+.about-section {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    padding-top: 6rem;
+    text-align: center;
+    padding-inline: 0rem;
+}
+
+.group-photo {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.about-section h2 {
+    margin-top: 1rem;
+    text-transform: uppercase;
+}
+
+.team-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}

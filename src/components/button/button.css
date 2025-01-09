@@ -8,6 +8,16 @@
     transition: all 0.325s ease-in-out;
 }
 
+.big {
+    padding: 1rem 1.5rem;
+    font-size: var(--fs-h3);
+}
+
+.medium {
+    padding: 0.5rem 0.75rem;
+    font-size: var(--fs-h4);
+}
+
 .filled {
     background-color: var(--clr-accent);
     color: var(--clr-light);

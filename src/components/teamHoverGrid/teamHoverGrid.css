@@ -1,0 +1,42 @@
+.team-grid {
+    --avatar-count: 10;
+    --avatar-size: 100px;
+    --transition-duration: 400ms;
+    --column-size: calc(var(--avatar-size) / 2);
+
+    display: grid;
+    grid-template-columns: repeat(var(--avatar-count), var(--column-size));
+    transition: grid-template-columns var(--transition-duration) ease-in-out;
+    transition-delay: var(--transition-duration);
+}
+
+.team-grid:hover,
+.team-grid:focus-within {
+    --column-size: calc(var(--avatar-size) * 1.5);
+    transition-delay: 0ms; /* fixes animation timing by allowing a delay for avatar transitions to finish before */
+}
+
+.avatar {
+    width: var(--avatar-size);
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--clr-light);
+    box-shadow: .25rem .25rem .5rem hsl(0 0% 0% / .2);
+    transition: scale var(--transition-duration) ease-in-out;
+}
+
+.avatar:hover,
+.avatar:focus {
+    scale: 2;
+    z-index: 2; /* so that one hovering on is always on top */
+}
+
+@supports selector(:has(+ *)) {
+    .avatar:hover + .avatar,
+    .avatar:has( + .avatar:hover) {
+        scale: 1.5;
+    }
+}
+
+
