@@ -25,6 +25,9 @@ jobs:
       - name: Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧
         uses: ./.github/workflows/setup-node
 
+      - name: print environment variables
+        run: echo "My NEXT_PUBLIC_PLACE_ID is ${{ vars.NEXT_PUBLIC_PLACE_ID }}. My API_KEY is ${{ secrets.NEXT_PUBLIC_API_KEY }}"
+
       - name: Build with Next.js 🏗️
         run: npx next build
         env:
