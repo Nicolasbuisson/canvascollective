@@ -8,8 +8,10 @@
 
   --clr-light: #fff;
   --clr-light-grey: #c5c5c5;
+  --clr-grey: #696969;
   --clr-dark: #626262;
   --clr-accent: #E7B250;
+  --clr-card-background: #c6c6c640;
 
   --fs-h1: 3rem;
   --fs-h2: 2.5rem;

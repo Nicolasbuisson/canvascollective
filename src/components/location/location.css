@@ -27,4 +27,5 @@
 .location-map {
     height: 450px;
     width: 90%;
+    border-radius: 8px;
 }
