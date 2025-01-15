@@ -21,18 +21,20 @@ export const Reviews = async () => {
   ) : (
     <section className="review-section">
       <h2>Listen to what our clients have to say</h2>
-      {jsonData.result.reviews.map((review: IGoogleReview) => {
-        return (
-          <ReviewCard
-            key={review.author_name}
-            author_name={review.author_name}
-            profile_photo_url={review.profile_photo_url}
-            rating={review.rating}
-            relative_time_description={review.relative_time_description}
-            text={review.text}
-          />
-        );
-      })}
+      <div className="reviews-container">
+        {jsonData.result.reviews.map((review: IGoogleReview) => {
+          return (
+            <ReviewCard
+              key={review.author_name}
+              author_name={review.author_name}
+              profile_photo_url={review.profile_photo_url}
+              rating={review.rating}
+              relative_time_description={review.relative_time_description}
+              text={review.text}
+            />
+          );
+        })}
+      </div>
     </section>
   );
 };

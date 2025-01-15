@@ -7,4 +7,13 @@
 
 .review-section h2 {
     text-align: center;
+    margin-bottom: 2rem;
+}
+
+.reviews-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }

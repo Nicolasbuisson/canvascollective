@@ -1,5 +1,5 @@
 .review-card {
-    --max-width: 420px;
+    --max-width: 28rem;
     --image-size: 48px;
     --star-size: 24px;
 
@@ -12,6 +12,30 @@
     border-radius: 24px;
     box-shadow: 0rem .25rem .5rem hsl(0 0% 0% / .2);
     background-color: var(--clr-card-background);
+}
+
+@media (width > 60rem) {
+    .review-card {
+        --max-width: 34.25rem;
+    }
+    .review-card:nth-of-type(odd) {
+        align-self: start;
+    }
+    .review-card:nth-of-type(even) {
+        align-self: end;
+    }
+}
+
+@media (width > 72rem) {
+    .review-card {
+        --max-width: 41.25rem;
+    }
+}
+
+@media (width > 84rem) {
+    .review-card {
+        --max-width: 52rem;
+    }
 }
 
 .review-card img {
