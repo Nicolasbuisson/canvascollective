@@ -26,13 +26,13 @@ jobs:
         uses: ./.github/workflows/setup-node
 
       - name: print environment variables
-        run: echo "NEXT_PUBLIC_PLACE_ID is ${{vars.NEXT_PUBLIC_PLACE_ID}} and NEXT_PUBLIC_API_KEY is ${{secrets.NEXT_PUBLIC_API_KEY}}"
+        run: echo "PLACE_ID is ${{vars.PLACE_ID}} and GOOGLE_API_KEY is ${{secrets.GOOGLE_API_KEY}}"
 
       - name: Build with Next.js 🏗️
         run: npx next build
         env:
-          NEXT_PUBLIC_API_KEY: ${{secrets.NEXT_PUBLIC_API_KEY}}
-          NEXT_PUBLIC_PLACE_ID: ${{vars.NEXT_PUBLIC_PLACE_ID}}
+          NEXT_PUBLIC_API_KEY: ${{secrets.GOOGLE_API_KEY}}
+          NEXT_PUBLIC_PLACE_ID: ${{vars.PLACE_ID}}
 
       - name: print directory
         run: ls -a

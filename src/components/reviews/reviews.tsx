@@ -1,3 +1,4 @@
+import { config } from "@/config/config";
 import { IGoogleReview, ReviewCard } from "./reviewCard";
 import "./reviews.css";
 
@@ -9,7 +10,7 @@ export const Reviews = async () => {
   let jsonData: IGoogleReviews = { result: { reviews: [] } };
   try {
     const data = await fetch(
-      `https://maps.googleapis.com/maps/api/place/details/json?place_id=${process.env.NEXT_PUBLIC_PLACE_ID}&key=${process.env.NEXT_PUBLIC_API_KEY}&fields=reviews`
+      `https://maps.googleapis.com/maps/api/place/details/json?place_id=${config.PLACE_ID}&key=${config.GOOGLE_API_KEY}&fields=reviews`
     );
     jsonData = await data.json();
   } catch (error) {
