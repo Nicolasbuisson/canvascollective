@@ -17,13 +17,13 @@ export const Reviews = async () => {
     console.log("Error fetching Google reviews:" + error);
   }
 
-  return jsonData.result.reviews.length < 1 ? (
+  return jsonData.result?.reviews?.length < 1 ? (
     <></>
   ) : (
     <section className="review-section">
       <h2>Listen to what our clients have to say</h2>
       <div className="reviews-container">
-        {jsonData.result.reviews.map((review: IGoogleReview) => {
+        {jsonData.result?.reviews?.map((review: IGoogleReview) => {
           return (
             <ReviewCard
               key={review.author_name}
