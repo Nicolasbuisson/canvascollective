@@ -10,6 +10,18 @@ footer {
     clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
 }
 
+@media (width < 540px) {
+    footer {
+        --footer-height: 20rem;
+    }
+}
+
+@media (width < 350px) {
+    footer {
+        --footer-height: 23rem;
+    }
+}
+
 .sticky-footer-container {
     position: fixed;
     bottom: 0;
@@ -21,6 +33,11 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+}
+
+.sticky-footer-container h2 {
+    text-wrap: balance;
+    text-align: center;
 }
 
 .footer-items {
