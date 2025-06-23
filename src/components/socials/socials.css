@@ -1,0 +1,34 @@
+.socials-icon-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.socials-link {
+    transition: all .3s ease-in-out;
+    border-radius: 100%;
+    padding: 0px;
+}
+
+.socials-icon {
+    padding: 12px;
+    filter: invert(90%) sepia(28%) saturate(2%) hue-rotate(257deg) brightness(107%) contrast(100%);
+    width: var(--icon-size);
+    height: var(--icon-size);
+    transition: all .3s ease-in-out;
+}
+
+/* hover effects */
+.socials-link:hover {
+    background-color: var(--clr-light);
+    transform: scale(0.8);
+}
+
+.socials-link:hover>svg {
+    filter: none;
+    fill: var(--clr-dark);
+}
+
+.socials-icon:hover {
+    transform: scale(0.8);
+}
